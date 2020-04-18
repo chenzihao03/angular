@@ -41,7 +41,7 @@ export const routes: Routes = [
       path: 'test',
       component: MainComponent,
       data: {
-        title: '測試',
+        title: '测试',
         hidden: false
       }
     }],

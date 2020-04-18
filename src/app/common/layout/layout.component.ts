@@ -7,7 +7,7 @@ import {routes} from '../../app-routing.module';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-  isCollapsed = false;
+  isCollapsed = true;
   routes = routes;
 
   constructor() {
