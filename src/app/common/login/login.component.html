@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="timg">
+      <h1 class="h1">欢迎</h1>
+      <div class="times">{{today | date:'HH:mm'}}</div>
+    </div>
+
+    <form class="form">
+      <input type="text" placeholder="用户名" [(ngModel)]="username" name="username"/>
+      <input type="password" placeholder="密码" [(ngModel)]="password" name="password"/>
+      <button (click)="doLogin()">登录</button>
+    </form>
+  </div>
+
+  <ul class="bg-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
