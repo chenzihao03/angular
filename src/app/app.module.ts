@@ -3,39 +3,18 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {IconsProviderModule} from './icons-provider.module';
-import {NzLayoutModule} from 'ng-zorro-antd/layout';
-import {NzMenuModule} from 'ng-zorro-antd/menu';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NZ_I18N, zh_CN} from 'ng-zorro-antd/i18n';
-import {registerLocaleData} from '@angular/common';
-import zh from '@angular/common/locales/zh';
-import {NgZorroAntdModule} from 'ng-zorro-antd';
-import {HomeComponent} from './model/basic/home/home.component';
-import {MainComponent} from './model/main.component';
-
-registerLocaleData(zh);
+import {LoginAuthService} from './common/login/login-auth.service';
+import {AuthService} from './common/login/auth.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    MainComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    IconsProviderModule,
-    NzLayoutModule,
-    NzMenuModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    NgZorroAntdModule
+    AppRoutingModule
   ],
-  providers: [{provide: NZ_I18N, useValue: zh_CN}],
+  providers: [AuthService, LoginAuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
