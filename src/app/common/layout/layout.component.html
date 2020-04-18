@@ -12,13 +12,23 @@
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="系统管理" nzIcon="dashboard">
-        <ul *ngFor="let item of routes">
-          <li nz-menu-item nzMatchRouter *ngIf="!item.data.hidden">
-            <a [routerLink]="item.path">{{item.data.title}}</a>
+      <ng-container *ngFor="let item of routes">
+        <ng-container *ngIf="!item.data.hidden">
+          <li
+            nz-submenu
+            nzOpen
+            [nzTitle]="item.data.title"
+            [nzIcon]="item.data.icon">
+            <ng-container *ngFor="let item1 of item.children">
+              <ul>
+                <li nz-menu-item nzMatchRouter>
+                  <a [routerLink]="item1.path">{{item1.data.title}}</a>
+                </li>
+              </ul>
+            </ng-container>
           </li>
-        </ul>
-      </li>
+        </ng-container>
+      </ng-container>
     </ul>
   </nz-sider>
   <nz-layout>

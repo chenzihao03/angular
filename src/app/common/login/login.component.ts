@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     if (username && password) {
       window.sessionStorage.setItem('token', username);
       window.sessionStorage.setItem('user', username);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/layout/home']);
     } else {
       this.notification.create(
         'error',
