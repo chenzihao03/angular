@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ export class LoginComponent implements OnInit {
   username = null;
   password = null;
 
-  constructor() {
+  constructor(private notification: NzNotificationService, public router: Router) {
     this.timer = setInterval(() => {
       this.today = new Date();
     }, 1000);
@@ -25,15 +27,18 @@ export class LoginComponent implements OnInit {
   }
 
   doLogin() {
-    //必须写this
     let username = this.username;
     let password = this.password;
     if (username && password) {
       window.sessionStorage.setItem('token', username);
       window.sessionStorage.setItem('user', username);
+      this.router.navigate(['/home']);
     } else {
-      alert('登录失败');
+      this.notification.create(
+        'error',
+        '登录失败',
+        '请输入用户名和密码！'
+      );
     }
   }
-
 }

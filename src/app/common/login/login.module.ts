@@ -3,6 +3,7 @@ import {LoginComponent} from './login.component';
 import {CommonModule} from '@angular/common';
 import {Routes, RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import {NgZorroAntdModule} from 'ng-zorro-antd';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    NgZorroAntdModule,
     RouterModule.forChild(routes)
   ],
   declarations: [LoginComponent],

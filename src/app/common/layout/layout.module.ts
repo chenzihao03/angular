@@ -11,7 +11,11 @@ import zh from '@angular/common/locales/zh';
 registerLocaleData(zh);
 
 @NgModule({
-  imports: [LayoutRoutingModule, CommonModule, NgZorroAntdModule],
+  imports: [
+    CommonModule,
+    NgZorroAntdModule,
+    LayoutRoutingModule
+  ],
   declarations: [LayoutComponent],
   providers: [{provide: NZ_I18N, useValue: zh_CN}],
   exports: [LayoutComponent]
