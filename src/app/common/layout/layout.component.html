@@ -50,7 +50,7 @@
                   <i nz-icon nzType="bell" nzTheme="outline"></i>
                 </span>
               </div>
-              <div nz-col nzSpan="18" class="avatar-class" nz-dropdown nzTrigger="hover" [nzDropdownMenu]="menu">
+              <div nz-col nzSpan="14" class="avatar-class" nz-dropdown nzTrigger="hover" [nzDropdownMenu]="menu">
                 <div nz-row>
                   <div nz-col nzSpan="8" nzOffset="2">
                     <nz-avatar [nzSize]="32" nzIcon="user"
@@ -73,6 +73,15 @@
                   </ul>
                 </nz-dropdown-menu>
               </div>
+              <div nz-col nzSpan="4" class="avatar-class" (click)="this.visible = true">
+                <i nz-icon nzType="ellipsis" nzTheme="outline"></i>
+              </div>
+              <nz-drawer [nzClosable]="false" [nzVisible]="visible" nzPlacement="right"
+                                                                    nzTitle="Basic Drawer" (nzOnClose)="this.visible = false">
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+              </nz-drawer>
             </div>
           </div>
         </div>

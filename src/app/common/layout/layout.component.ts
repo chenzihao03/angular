@@ -9,6 +9,7 @@ import {routes} from '../../app-routing.module';
 export class LayoutComponent implements OnInit {
   isCollapsed = true;
   routes = routes;
+  visible = false;
 
   constructor() {
   }
@@ -16,4 +17,7 @@ export class LayoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  close(): void {
+    this.visible = false;
+  }
 }
