@@ -76,8 +76,12 @@
               <div nz-col nzSpan="4" class="avatar-class" (click)="this.visible = true">
                 <i nz-icon nzType="ellipsis" nzTheme="outline"></i>
               </div>
-              <nz-drawer [nzClosable]="false" [nzVisible]="visible" nzPlacement="right"
-                                                                    nzTitle="Basic Drawer" (nzOnClose)="this.visible = false">
+              <nz-drawer
+                [nzClosable]="false"
+                [nzVisible]="visible"
+                nzPlacement="right"
+                nzTitle="Basic Drawer"
+                (nzOnClose)="this.visible = false">
                 <p>Some contents...</p>
                 <p>Some contents...</p>
                 <p>Some contents...</p>
